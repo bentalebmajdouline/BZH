@@ -4,12 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+          
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <script src="https://kit.fontawesome.com/3e13498c06.js"></script>
+    
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Page accueil</h1>
-    <p>On est le {{ date|date:"l d F Y" }} il est {{ date|date:"H\h i\m\i\n s\s\e\c"}}</p>
-    <p>tristan go teams</p>
-    <a href="/admin">page admin</a>
+    <section id="home" class="container-fluid">
+
+        <div class="heading">
+            <h2>Hello, Bienvenue sur la page d'acceuil</h2>
+            <h4>On est le {{ date|date:"l d F Y" }} il est {{ date|date:"H\h i\m\i\n s\s\e\c"}}</h4>
+            <br>
+            <a href="/admin" class="button1" target="_blank">Entrer</a>
+
+        </div>
+
+    </section>
+    <!-- 
+        <h1>Page accueil</h1>
+        <p>On est le {{ date|date:"l d F Y" }} il est {{ date|date:"H\h i\m\i\n s\s\e\c"}}</p>
+        <p>tristan go teams</p>
+        <p>Benzema Ballon D'or</p>
+        <a href="/admin">page admin</a>
+    -->
 </body>
 </html>

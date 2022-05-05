@@ -5,21 +5,43 @@
     <title>Title</title>
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    </head>
-<body>
-    <h1>Le blog</h1>
-    <form action="">
-            <div>
-        <label for="user_name">Username :</label>
-        <input id="user_name" type="text">
-    </div>
-    <div>
-        <label for="password">Password :</label>
-        <input id="password" type="text">
-    </div>
-        <input type="submit" value="se connecter">
-    </form>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">    
+          <div class="fadeIn first">
+            <h1>Question pour un Champion</h1>
+          </div>
+    
+          <form>
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password">
+            <br><br>
+            <input type="submit" class="fadeIn fourth" value="Log In">
+          </form>
+
+          <div id="formFooter">
+            <a class="underlineHover" href="#">Mot de passe oublié ?</a>
+          </div>
+      
+        </div>
+      </div>
+
+      <!--   
+
+          <h1>Le blog</h1>
+          <form action="">
+                  <div>
+              <label for="user_name">Username :</label>
+              <input id="user_name" type="text">
+          </div>
+          <div>
+              <label for="password">Password :</label>
+              <input id="password" type="text">
+          </div>
+              <input type="submit" value="se connecter">
+          </form>
+      -->
 </body>
 <script src="{% static 'scripts/script.js'%}"></script>
 </html>
