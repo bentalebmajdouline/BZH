@@ -47,8 +47,15 @@ public class TestDefinis {
 
 		Map<String, Object> vars;
 		JavascriptExecutor js;
+
+		// ----------------------------------------------------[Attention de ne pas
+		// oublier de rajouter son propre chemin de
+		// chromedriver]------------------------------------!
+		//
 		// System.setProperty("webdriver.chrome.driver","C:\\Users\\Administrateur\\Desktop\\chromedriver.exe");
 		// System.setProperty("webdriver.gecko.driver","C:\\Users\\Administrateur\\Desktop\\geckodriver.exe");
+		// --------------------------------------------------------------------------------[fin]-------------------------------------------------------------------------------!
+
 		System.setProperty("webdriver.edge.driver", "C:\\Users\\Administrateur\\Desktop\\msedgedriver.exe");
 		// driver = new ChromeDriver();
 		// driver = new FirefoxDriver();
@@ -70,7 +77,7 @@ public class TestDefinis {
 		// click et input du champs password
 		driver.findElement(By.id("session_password")).click();
 		driver.findElement(By.id("session_password")).sendKeys("motDePasse");
-		//click sur le bouton connexion
+		// click sur le bouton connexion
 		driver.findElement(By.cssSelector(".sign-in-form__submit-button")).click();
 
 	}
@@ -93,7 +100,7 @@ public class TestDefinis {
 		// click et input du champs password
 		driver.findElement(By.id("session_password")).click();
 		driver.findElement(By.id("session_password")).sendKeys("motDePasseErrone");
-		//click sur le bouton connexion
+		// click sur le bouton connexion
 		driver.findElement(By.cssSelector(".sign-in-form__submit-button")).click();
 
 	}
@@ -102,7 +109,7 @@ public class TestDefinis {
 	public void la_page_affiche_un_message_d_erreur() {
 		System.out.println("-----@When-----");
 		List<WebElement> elements = driver.findElements(By.id("error-for-username"));
-	      assert(elements.size() > 0);
+		assert (elements.size() > 0);
 
 	}
 
@@ -115,7 +122,7 @@ public class TestDefinis {
 		// click et input du champs password
 		driver.findElement(By.id("session_password")).click();
 		driver.findElement(By.id("session_password")).sendKeys("motDePasse");
-		//click sur le bouton connexion
+		// click sur le bouton connexion
 		driver.findElement(By.cssSelector(".sign-in-form__submit-button")).click();
 
 	}
@@ -125,7 +132,7 @@ public class TestDefinis {
 		System.out.println("-----@Then-----");
 		assertThat(driver.getTitle(), is("Accueil-Quizz"));
 		List<WebElement> elements = driver.findElements(By.id("admin_button"));
-	      assert(elements.size() == 0);
+		assert (elements.size() == 0);
 
 	}
 
@@ -138,7 +145,7 @@ public class TestDefinis {
 		// click et input du champs password
 		driver.findElement(By.id("session_password")).click();
 		driver.findElement(By.id("session_password")).sendKeys("motDePasseErrone");
-		//click sur le bouton connexion
+		// click sur le bouton connexion
 		driver.findElement(By.cssSelector(".sign-in-form__submit-button")).click();
 
 	}
