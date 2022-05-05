@@ -4,7 +4,6 @@ from django.shortcuts import render
 from .forms import connectForm
 
 
-
 def index(request):
     users = [
         {
@@ -17,13 +16,18 @@ def index(request):
         },
         {
             "username": "user1",
-            "password": "admin1"
+            "password": "user1"
         }
     ]
     if request.method == 'POST':
         form = connectForm(request.POST)
         if form.is_valid():
-            return render(request, "quizz/connect_user.html", {'form': form})
+            user_input = form.username_input
+            user_password = form.password_input
+            for user in users:
+                if user["username"] == user_input and user["password"] == user_password:
+                    return render(request, "quizz/connect_user.html", {'form': form, 'value_list': users})
+            return HttpResponse("<p>WRONG INPUT</p>")
     else:
         form = connectForm()
-    return render(request, "quizz/index.html", {'form': form})
+    return render(request, "quizz/index.html", {'form': form, 'value_list': users})
