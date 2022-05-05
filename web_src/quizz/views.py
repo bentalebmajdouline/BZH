@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from .forms import connectForm
+
 
 
 def index(request):
@@ -18,8 +20,10 @@ def index(request):
             "password": "admin1"
         }
     ]
-    f = ContactForm()
-    f.base_fields['name'].label = "Username"
-    another_f = CommentForm(auto_id=False)
-    another_f.as_table().split('\n')[0]
-    return render(request, "quizz/index.html", users)
+    if request.method == 'POST':
+        form = connectForm(request.POST)
+        if form.is_valid():
+            return render(request, "quizz/connect_user.html", {'form': form})
+    else:
+        form = connectForm()
+    return render(request, "quizz/index.html", {'form': form})
