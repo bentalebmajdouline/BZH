@@ -126,7 +126,7 @@ body {
     min-height: 100%;
     padding: 20px;
   }
-  
+
   #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
@@ -149,7 +149,6 @@ body {
     -webkit-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
   }
-  
   
   
   /* TABS */
