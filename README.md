@@ -1,6 +1,8 @@
 Installer Python 3.10.4 :
 
-    Choisir "Windows Installer 64bit" -> https://www.python.org/downloads/release/python-3104/
+    Choisir "Windows Installer 64bit" 
+    
+   https://www.python.org/downloads/release/python-3104/
     
 
 Mise en place de l'environnement virtuel pour le site web :

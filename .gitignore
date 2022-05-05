@@ -1,3 +1,4 @@
 /target/
-env/
 web_src/db.sqlite3
+env/*
+.idea/*
