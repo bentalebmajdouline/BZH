@@ -3,4 +3,18 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, "quizz/index.html")
+    users = [
+        {
+            "username": "admin1",
+            "password": "admin1"
+        },
+        {
+            "username": "admin2",
+            "password": "admin2"
+        },
+        {
+            "username": "user1",
+            "password": "admin1"
+        }
+    ]
+    return render(request, "quizz/index.html", users)
