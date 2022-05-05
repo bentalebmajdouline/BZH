@@ -18,7 +18,7 @@
 #Sample Feature Definition Template
 @tag
 Feature: Scenario connexion
-  cette feature test le scénario nominal et le scénario d exception de la connexion formateur et stagiaire
+  cette feature test le scï¿½nario nominal et le scï¿½nario d exception de la connexion formateur et stagiaire
 
   @tag1
   Scenario: CN formateur
