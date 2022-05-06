@@ -6,11 +6,16 @@
 </head>
 <body>
     <h1>Bienvenue user</h1>
-<!--        {% for theme in themes %}-->
-<!--        {{ theme.theme_name}}-->
 
+    <label for="theme">Choisir un theme :</label>
+    <select name="theme" id="theme">
+        {% for theme in themes %}
+        <option value="{{ theme.theme_name }}">{{ theme.theme_name }}</option>
+        {% endfor %}
+    </select>
+    <button><a href="/quizz/question">JOUER</a></button>
     <ul>
-        {% for question in question %}
+        {% for question in questions %}
         <li>{{ question.question_text }}</li>
         {% endfor %}
     </ul>

@@ -10,7 +10,10 @@ from .forms import connectForm
 
 def index(request):
     questions = Question.objects.all()
-    context = {"question" : questions}
+    themes = Theme.objects.all()
+    theme_selected = request.POST.get("theme")
+    print(theme_selected)
+    context = {"questions": questions, "themes": themes}
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -29,12 +32,17 @@ def index(request):
         else:
             return render(request, "quizz/index.html", {'form': form})
 
-    #     if form.is_valid():
-    #         # for user in users:
-    #         #     if user["username"] == user_input and user["password"] == user_password:
-    #         form
-    #         return render(request, "quizz/connect_user.html", {'form': form, 'value_list': users})
-    #         # return HttpResponse("<p>WRONG INPUT</p>")
-    # else:
     form = connectForm()
     return render(request, "quizz/index.html", {'form': form})
+
+
+def question(request):
+    questions = Question.objects.all()
+    themes = Theme.objects.all()
+    choices = Choice.objects.all()
+    theme_selected = request.POST.get("theme")
+    print(theme_selected)
+    if theme_selected == Question.theme:
+        print(theme_selected)
+    context = {"questions": questions, "themes": themes, "choices": choices}
+    return render(request, "quizz/question.html", context)
