@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question</title>
+</head>
+<body>
+{% for question in questions %}
+    <fieldset>
+        <legend>{{ question.question_text }}</legend>
+
+        {% for choice in choices %}
+        <div>
+            <input type="checkbox" name="{{ choice.choice_text }}" id="{{ choice.choice_text }}">
+            <label for="{{ choice.choice_text }}">{{ choice.choice_text }}</label>
+        </div>
+        {% endfor %}
+
+    </fieldset>
+    {% endfor %}
+</body>
+</html>
