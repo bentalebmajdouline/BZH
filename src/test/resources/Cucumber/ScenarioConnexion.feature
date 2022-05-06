@@ -18,7 +18,7 @@
 #Sample Feature Definition Template
 @tag
 Feature: Scenario connexion
-  cette feature test le scï¿½nario nominal et le scï¿½nario d exception de la connexion formateur et stagiaire
+  cette feature test le scénario nominal et le scénario d exception de la connexion formateur et stagiaire
 
   @tag1
   Scenario: CN formateur
@@ -44,3 +44,15 @@ Feature: Scenario connexion
     When le stagiaire entre un identifiant ou un mot de passe errone
     Then la page affiche un message d erreur
 
+  @tag5
+  Scenario Outline: Scenarios de connexion automatises
+    Given Je demarre un scenario de connexion d un  utilisateur
+    When j entre dans le formulaire son <identifiant> et son <password> et je valide
+    Then je verifie que nous sommes sur <resultat>
+
+    Examples: 
+      | identifiant     | password         | resultat                                                                                 |
+      | "admin"         | "admin"          | "Bienvenue sur l'interface d'administration de Quizz pour un champion ! \| QPUC - Admin" |
+      | "stag2@mail.fr" | "wrongPsw1"      | "prend ton titre"                                                                        |
+      | "form2@mail.fr" | "wrongPsw2"      | "prend ton titre"                                                                        |
+      | "tristan"       | "tristantristan" | "Title"                                                                                  |

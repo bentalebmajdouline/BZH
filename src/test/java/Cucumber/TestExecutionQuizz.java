@@ -54,9 +54,9 @@ public class TestExecutionQuizz {
 		js = (JavascriptExecutor) driver;
 		vars = new HashMap<String, Object>();
 		// Connexion au site
-		driver.get("https://quizz.fr/accueil");
+		driver.get("http://127.0.0.1:8000/quizz/?");
 //		driver.manage().window().maximize();
-		assertThat(driver.getTitle(), is("Accueil-Quizz"));
+		assertThat(driver.getTitle(), is("Quizz"));
 		System.out.println("Page accueil atteinte");
 	    
 	}
