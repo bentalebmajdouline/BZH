@@ -32,7 +32,7 @@ def index(request):
                             password=password)
         if user is not None:
             if not user.get_user_permissions():
-                return HttpResponse("Pas le droit")
+                return HttpResponse("PAGE USER")
             login(request, user)
             print(user.get_user_permissions())
             # return HttpResponse("<p>success</p>")
