@@ -12,9 +12,6 @@
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        {% for val in value_list %}
-        <p>{{ val }}</p>
-        {% endfor %}
         <input id="connect" type="submit" value="se connecter">
     </form>
 </body>
